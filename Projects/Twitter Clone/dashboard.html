@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css"/>
+   
+    <title>Dashboard</title>
+</head>
+<body style="display: flex; flex-direction:column;">
+    <nav id="dashNav">
+        <h1><b>Sitter</b></h1>
+        <form>
+        <input id="dashIpt" type="search" placeholder="Search.."/>
+   </form>
+</nav>
+   <div class="dashBod">
+    <div class="dashLeft">
+        <span style=" width: 100%; display: flex; align-items: center; flex-direction: column;">
+            <button style="background-color: black; min-width: fit-content; border: 0px;" type="button" class="btn btn-primary position-relative">
+                <h3>Notifications</h3>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  5
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button>
+        <hr style="width: 100%; border: 0; border-top: 1px solid gray;"/>
+        <button style="border: 0px; background-color: black; min-width: fit-content;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <h3>Messages</h3>
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Messages</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <center><h4>Inbox Empty</h4></center>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>
+        <hr style="width: 100%; border: 0; border-top: 1px solid gray;"/>
+        </span>
+        <div class="profInfo">
+            <img src="./icons8-name-50.png"/>
+            <h2>Your Info</h2>
+            <div class="details">
+                <span class="posts">
+                <p2>Posts</p2>
+                <center><h6>10</h6></center>
+            </span>
+                <span class="followers"><p2>Followers</p2>
+                    <center><h6>1700</h6></center>
+                </span>
+                <span class="following"><p2>Following</p2>
+                <center><h6>100</h6></center>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <h3>What's Happening?</h3>
+        <div class="userPost"> 
+            <img width="60px" height="60px" id="proPic"  src="./icons8-name-50.png"/>  
+        <form>
+            <input placeholder="Whats on your mind?"/>
+        <button>Post</button>
+        </form>
+        </div>
+        <span id="postFeed"><center><h3 style="color: black;">My Feed</h3></center></span>
+        <div class="friends">
+           
+            <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+            <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+            <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+            <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+            <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+          
+           
+           
+        </div>
+    </div>
+    <div class="dashRight">
+        <h3>News Feed</h3>
+        <div class="newsPost"><p1>This is where the news api will fetch and post data</p1></div>
+        <div class="newsPost"><p1>This is where the news api will fetch and post data</p1></div>
+        <div class="newsPost"><p1>This is where the news api will fetch and post data</p1></div>
+    </div>
+   </div>
+
+    <!--Mobile-->
+   <div class="mobileDash">
+    <nav id="mobDashNav">
+        <h1><b>Sitter</b></h1>
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" href="#exampleModalToggle" role="button" style="background-color: black; margin-left: 62vw; color: aliceblue;"><i class="bi bi-list" style="color: white;"></i></button>
+     <!--modal-->
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel">Menu</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                    <button style="background-color: black; min-width: fit-content; border: 0px; margin-right: 1vh;" type="button" class="btn btn-primary position-relative">
+                        <h3>Notifications</h3>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          5
+                          <span class="visually-hidden">unread messages</span>
+                        </span>
+                      </button>
+                      <button style="border: 0px; background-color: black; min-width: fit-content;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle2">
+                        <h3>Messages</h3>
+                      </button></center>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">Messages</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <center><h4>Inbox Empty</h4></center>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </nav>
+    <center><h4 style="color: gray; margin-top: 1vh;">Whats Happening?</h4></center>
+    <div class="userPost"> 
+        <img width="60px" height="60px" id="proPic"  src="./icons8-name-50.png"/>  
+    <form>
+        <input placeholder="Whats on your mind?" style="width: 55vw; "/>
+    <button style="min-width: fit-content;">Post</button>
+    </form>
+   </div>
+   <center><h4 style="margin-top: 1vh;">My Feed</h4></center>
+   <div class="mobPostFeed">
+    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+   </div>
+   <div class="mobProfInfo">
+    <img src="./icons8-name-50.png" width="60px" height="60px"/>
+    <h2>Your Info</h2>
+    <div class="details">
+        <span class="posts">
+        <p2>Posts</p2>
+        <center><h6>10</h6></center>
+    </span>
+        <span class="followers"><p2>Followers</p2>
+            <center><h6>1700</h6></center>
+        </span>
+        <span class="following"><p2>Following</p2>
+        <center><h6>100</h6></center>
+        </span>
+    </div>
+</div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
