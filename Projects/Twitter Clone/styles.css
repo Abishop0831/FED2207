@@ -76,6 +76,12 @@ button {
     border-radius: 10px;
     cursor: pointer;
     font-size: x-large;
+    
+}
+
+button a {
+  text-decoration: none;
+    color: aliceblue;
 }
 
 .name {
