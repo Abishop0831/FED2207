@@ -120,12 +120,15 @@
                       </button>
                       <button style="border: 0px; background-color: black; min-width: fit-content;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle2">
                         <h3>Messages</h3>
-                      </button></center>
+                      </button>
+                   
+                    </center>
+                       <center><button style="border: 0px; background-color: black; min-width: fit-content; margin-top: 1vh;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mobileSearch"><h3>Search</h3></button></center>
                 </div>
               </div>
             </div>
           </div>
-          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+       <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
@@ -135,6 +138,24 @@
                 <div class="modal-body">
                     <center><h4>Inbox Empty</h4></center>
                 </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="mobileSearch" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">Search</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <form type="submit">
+                        <input  type="search" placeholder="Search.." style="width: 100%;"/></form></center>
+                    </div>
                 <div class="modal-footer">
                   <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
                 </div>
