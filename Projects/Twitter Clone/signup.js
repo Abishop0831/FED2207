@@ -1,3 +1,4 @@
+//mobile
 let signUpForm = document.getElementById("mobileForm");
 
 
@@ -11,6 +12,7 @@ let signUpForm = document.getElementById("mobileForm");
 }
 
 
+let arr = [];
 
 
 signUpForm.addEventListener("submit", (e) => {
@@ -19,7 +21,8 @@ signUpForm.addEventListener("submit", (e) => {
     let email = signUpForm.querySelector('input[name="email"]').value
     let password = signUpForm.querySelector('input[name="password"]').value
     let username = signUpForm.querySelector('input[name="username"]').value
-    console.log(new User(name, email, username, password));
+    arr.push(new User(name, email, username, password))
+    console.log(arr);
 })
 
 
@@ -38,4 +41,7 @@ password: e.password,
  
  // let create = new user(e.target.name, e.target.password,)
   
-  
+
+
+
+// Desktop
