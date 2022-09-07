@@ -1,3 +1,5 @@
+
+
 //mobile
 let signUpForm = document.getElementById("mobileForm");
 
@@ -46,4 +48,17 @@ password: e.password,
 
 // Desktop
 
-/* */
+/* 
+
+WINDOW ONLOAD SPINNER
+1) take in values from input fields
+2) create new user object containing values
+3 create fn to check if username or email already
+exists on firebase
+4) if username or email exists, alert user
+and return
+5) if username or email or email doesnt exist, 
+store on firebase
+
+
+*/

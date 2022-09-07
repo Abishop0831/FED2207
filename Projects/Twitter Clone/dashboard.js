@@ -37,11 +37,79 @@ firebase
 7) save posts
 
 
-- create firstname and last name array
+
 - create randomizer fn (math.floor(math.random() * arr.len) to 
 select random index in both arrays
-- 
+- add values to name field on posts
+
 */
+
+
+//- create firstname and last name array
+
+
+
+
+
+
+
+let postBox = document.getElementById('postBox');
+let postBody = document.getElementById('postBody');
+let alerts = document.getElementById('alerts');
+
+
+let counter = 0;
+let compCount = 0;
+
+let firstName = ["Mike", "Tom", "Harry", "Pamela", "Alice", "Julie"];
+let lastName = ["Green", "Thompson", "Jacobs", "Harris", "Ford", "Matthews"];
+
+
+
+//computer post
+const compPost = () => {
+    let randOne = firstName[Math.floor(Math.random()* firstName.length)]
+    let randTwo = lastName[Math.floor(Math.random()* lastName.length)]
+    let botDiv = document.createElement('div');
+    botDiv.setAttribute('class', 'compPost');
+    let date = new Date().toLocaleDateString() + " " +  new Date().toLocaleTimeString()
+    botDiv.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${"@"+randOne + randTwo}</h4><i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i><p3>${date}</p3></span><p3>Computer post</p3></span>`
+    postBody.prepend(botDiv);
+    compCount++;
+    alerts.innerHTML = compCount;
+}
+
+
+setInterval(()=>{
+compPost();
+}, 20000);
+
+
+
+
+
+
+//Human post
+const createPost = (name, value) => {
+let newPost = document.createElement('div');
+
+newPost.setAttribute('class', 'compPost');
+
+//add onclick attr
+let time = new Date().toLocaleDateString() + " " +  new Date().toLocaleTimeString()
+newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4> <i class="bi bi-pencil-square"></i><i class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p3>${value}</p3></span>`
+newPost.setAttribute('id', `post${counter}`)
+postBody.prepend(newPost);
+
+}
+
+
+postBox.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    let val = e.path[0][0].value;
+    createPost('mike', val)
+    counter++;
+})
 
 
 //left

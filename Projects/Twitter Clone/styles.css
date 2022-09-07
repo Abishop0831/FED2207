@@ -448,9 +448,9 @@ background-color: black;
   align-items: center;
   padding-top: 1vh;
   gap: var(--height);
-  overflow: auto;
-
+ 
 }
+
 
 .dashLeft {
   display: flex;
@@ -572,23 +572,24 @@ padding-top: 1vh;
 .friends {
   display: flex;
   flex-direction: column;
- min-height: fit-content;
- height: 89vh;
- overflow: auto;
+ height: 60vh; 
   width: 100%;
   gap: 3vh;
   align-items: center;
- justify-content: center;
- padding-top: 29vh;
+ justify-content: flex-start;
  padding-bottom: var(--height);
+overflow: auto;
+
+
+
 }
 
 .compPost {
+
   display: flex;
   padding-top: var(--height);
   flex-direction: row;
   width: 94%;
-
   background-color: rgb(242, 242, 242);
   border-radius: 12px;
   min-height: fit-content;
@@ -598,12 +599,20 @@ padding-top: 1vh;
   padding-bottom: 1vh;
   -webkit-box-shadow: 0px 16px 15px -17px rgba(0,0,0,0.61); 
   box-shadow: 0px 16px 15px -17px rgba(0,0,0,0.61);
+  animation-name: newPost; 
+  animation-duration: 3s;  
+  animation-delay: 2s;
 }
 
 .compPost i {
   display: flex;
   
 }
+
+@keyframes newsPost {
+  from {top: 10px; }
+    to {top: 0px; }  
+  }
 
 .topDown {
   display: flex;
@@ -640,3 +649,4 @@ padding-top: 1vh;
   align-items: center;
   cursor: pointer;
 }
+
