@@ -1,4 +1,25 @@
-/* 
+let username = window.localStorage.getItem('username');
+let posts = Number(window.localStorage.getItem('posts'))
+let followers = window.localStorage.getItem('followers')
+let following = Number(window.localStorage.getItem('following'))
+//Desktop Divs
+let userDiv = document.getElementById('username')
+let postDiv = document.getElementById('posts')
+let followerDiv = document.getElementById('followers') 
+let followingDiv = document.getElementById('following')
+// Mobile Divs
+
+//DESKTOP 
+const loggedIn = ((username, posts, followers, following) => {
+userDiv.innerText = username;
+postDiv.innerText = posts;
+followerDiv.innerText = followers;
+followingDiv.innerText = following;
+})
+loggedIn(username, posts, followers, following)
+
+
+/*
 let div = document.createElement("div");
 let p = document.createElement("p");
 let span = document.createElement("span");
@@ -15,7 +36,7 @@ for posting fn
 //store coordinates in variables or object
 //use local storage for persistent data across files
 
-//DESKTOP 
+
 
 //center
 
@@ -50,7 +71,15 @@ select random index in both arrays
 
 
 
+/* 
+next steps... 
 
+icon functionality
+logout functionality
+news api calls
+
+
+*/
 
 
 let postBox = document.getElementById('postBox');
@@ -61,20 +90,43 @@ let alerts = document.getElementById('alerts');
 let counter = 0;
 let compCount = 0;
 
+let dLikeCount = 0;
+
 let firstName = ["Mike", "Tom", "Harry", "Pamela", "Alice", "Julie"];
 let lastName = ["Green", "Thompson", "Jacobs", "Harris", "Ford", "Matthews"];
 
 
 
-//computer post
+//Computer post
 const compPost = () => {
     let randOne = firstName[Math.floor(Math.random()* firstName.length)]
     let randTwo = lastName[Math.floor(Math.random()* lastName.length)]
+    let randNum = Math.floor(Math.random()* 999);
     let botDiv = document.createElement('div');
     botDiv.setAttribute('class', 'compPost');
     let date = new Date().toLocaleDateString() + " " +  new Date().toLocaleTimeString()
-    botDiv.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${"@"+randOne + randTwo}</h4><i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i><p3>${date}</p3></span><p3>Computer post</p3></span>`
+    botDiv.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement" id="iconsDiv"><h4>${"@"+randOne + randTwo + randNum}</h4><i id="like${compCount}" class="bi bi-hand-thumbs-up"></i><i id="dislike${compCount}" class="bi bi-hand-thumbs-down"></i><i id="follow${compCount}" class="bi bi-person-plus"></i><i onclick="" id="report${compCount}" class="bi bi-flag"></i><p3>${date}</p3></span><p3>Computer post</p3></span>`
     postBody.prepend(botDiv);
+   let icons = document.getElementById('iconsDiv');
+let likecount = 0;
+   icons.addEventListener('click', (e)=>{
+let id = e.target.getAttribute('id')
+let num =  document.createElement('p5');
+
+;
+
+if (likecount === 0) {
+    console.log('good')
+    likecount++;
+    console.log(likecount)
+    num.innerHTML = likecount
+    document.getElementById(id).appendChild(num)
+    return
+} 
+
+return
+})
+ 
     compCount++;
     alerts.innerHTML = compCount;
 }
@@ -85,21 +137,50 @@ compPost();
 }, 20000);
 
 
+// 
 
 
+
+let icnMethds = {
+
+    follow: ()=>{
+        alert('Followed')
+        //increment following count variable by 1
+
+    },
+    report: ()=> alert('Post has been reported'),
+    edit: (e)=>{
+        
+       
+    }
+    
+
+}
 
 
 //Human post
 const createPost = (name, value) => {
-let newPost = document.createElement('div');
+//exit condition
+if (value === "") {
+    alert('Unable to create empty posts');
+    return
+}    
 
+let newPost = document.createElement('div');
 newPost.setAttribute('class', 'compPost');
+
 
 //add onclick attr
 let time = new Date().toLocaleDateString() + " " +  new Date().toLocaleTimeString()
-newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4> <i class="bi bi-pencil-square"></i><i class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p3>${value}</p3></span>`
+
+newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4> <i id="${counter}" class="bi bi-pencil-square"></i><i class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p3 spellcheck="false"  contenteditable="true">${value}</p3></span>`
 newPost.setAttribute('id', `post${counter}`)
 postBody.prepend(newPost);
+posts++
+postDiv.innerText = posts
+
+window.localStorage.setItem('posts', posts);
+//send posts value to firebase
 
 }
 
@@ -107,11 +188,28 @@ postBody.prepend(newPost);
 postBox.addEventListener('submit', (e)=>{
     e.preventDefault();
     let val = e.path[0][0].value;
-    createPost('mike', val)
+    createPost(`${username}`, val)
+   console.log(posts);
     counter++;
 })
 
 
+let logoutDiv = document.getElementById('logOut');
+
+logoutDiv.addEventListener('click', ()=>{
+logOut(username);
+})
+
+
+const logOut = async (name) => {
+  await  window.confirm('Are you sure?');
+  await window.location.assign('index.html')
+ await alert(`Signed out from ${name}`)
+ //send updated values to firebase
+
+
+  window.localStorage.clear();
+}
 //left
 
 /* 
@@ -131,7 +229,7 @@ redirect to sign in page
 3) create object constructor for news api box instances
 with id, date, time, and value args
 4) update innerhtml of value
-5) setTimeout function to run every 20 secs 
+5) setInterval function to run every 20 secs 
 */
 
 

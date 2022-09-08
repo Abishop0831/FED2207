@@ -17,7 +17,10 @@ localStorage.setItem('Username', `${value}`)
 6) redirect to dashboard   
 */
 
+//change local storage items to new vals
 
+//grab posts count, followers count, and following
+//store them in window when firebase 
 
 
 

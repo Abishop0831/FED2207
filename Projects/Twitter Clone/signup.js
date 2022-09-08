@@ -1,5 +1,8 @@
 
 
+
+
+
 //mobile
 let signUpForm = document.getElementById("mobileForm");
 
@@ -17,16 +20,31 @@ let signUpForm = document.getElementById("mobileForm");
 let arr = [];
 
 
-signUpForm.addEventListener("submit", (e) => {
+signUpForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     let name = signUpForm.querySelector('input[name="name"]').value
     let email = signUpForm.querySelector('input[name="email"]').value
     let password = signUpForm.querySelector('input[name="password"]').value
     let username = signUpForm.querySelector('input[name="username"]').value
-    arr.push(new User(name, email, username, password))
-    console.log(arr);
+    window.localStorage.setItem('name', `${name}`)
+    window.localStorage.setItem('email', `${email}`)
+    window.localStorage.setItem('password', `${password}`)
+    window.localStorage.setItem('username', `@${username}`) 
+    window.localStorage.setItem('posts', 0);
+    window.localStorage.setItem('followers', 0)
+    window.localStorage.setItem('following', 0)
+    accepted(username);
+
+    //grab posts count, followers count, and following
+    //store them in window when firebase 
 })
 
+
+const accepted = (name) => {
+    window.location.assign('dashboard.html')
+    alert(`signed in as ${name}`)
+}
+ 
 
 
 /* 
