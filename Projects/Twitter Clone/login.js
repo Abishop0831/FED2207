@@ -45,8 +45,24 @@ loginMobile.addEventListener('submit', (e)=> {
 })
 
     
-    
-    
-    
+/*Firebase call to iterate
+through the user object 
+and find the Username and password
+
+
+
+*/    
+$(document).ready(()=>{
+let $getuser = () =>{
+
+}
+
+
+
+
+
+
+})
+
     
     

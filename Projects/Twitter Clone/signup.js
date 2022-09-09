@@ -13,11 +13,15 @@ let signUpForm = document.getElementById("mobileForm");
  this.email = email;
  this.username = username;
  this.password = password;
- this.age = "above 13";   
+ this.age = "above 13";
+ this.posts = 0;
+ this.followers = 0;
+ this.following = 0;   
 }
 
 
-let arr = [];
+
+
 
 
 signUpForm.addEventListener("submit", async (e) => {
@@ -36,7 +40,11 @@ signUpForm.addEventListener("submit", async (e) => {
     accepted(username);
 
     //grab posts count, followers count, and following
-    //store them in window when firebase 
+    //store them in window when firebase
+
+
+
+
 })
 
 
@@ -45,6 +53,14 @@ const accepted = (name) => {
     alert(`signed in as ${name}`)
 }
  
+
+
+
+
+
+
+
+
 
 
 /* 

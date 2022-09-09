@@ -111,7 +111,7 @@
                     <button style="background-color: black; min-width: fit-content; border: 0px; margin-right: 1vh;" type="button" class="btn btn-primary position-relative">
                         <h3>Notifications</h3>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notifyVal">
-                          5
+                          0
                           <span class="visually-hidden">unread messages</span>
                         </span>
                       </button>
@@ -120,8 +120,11 @@
                       </button>
                    
                     </center>
-                       <center><button style="border: 0px; background-color: black; min-width: fit-content; margin-top: 1vh; margin-right: 1vw;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mobileSearch"><h3>Search</h3></button><button style="border: 0px; background-color: black; min-width: fit-content; margin-top: 1vh;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mobileNewsFeed"><h3>News Feed</h3></button></center>
-                </div>
+                   
+                   <span style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 1vw;">
+                     <button style="border: 0px; background-color: black; min-width: fit-content; margin-top: 1vh;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mobileNewsFeed"><h3>News Feed</h3></button>
+                      <button style="border: 0px; background-color: black; min-width: fit-content; color:aliceblue; margin-top: 1vh;" class="btn btn-primary"  id="mobLogout"><h3>Log Out</h3></button></span></
+                     </div>
               </div>
             </div>
           </div>
@@ -141,24 +144,7 @@
               </div>
             </div>
           </div>
-          <div class="modal fade" id="mobileSearch" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalToggleLabel2">Search</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <center>
-                        <form type="submit">
-                        <input  type="search" placeholder="Search.." style="width: 100%;"/></form></center>
-                    </div>
-                <div class="modal-footer">
-                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <div class="modal fade" id="mobileNewsFeed" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
@@ -184,38 +170,35 @@
     <center><h4 style="color: gray; margin-top: 1vh;">Whats Happening?</h4></center>
     <div class="userPost"> 
         <img width="60px" height="60px" id="proPic"  src="./icons8-name-50.png"/>  
-    <form>
+    <form id="userPost">
         <input placeholder="Whats on your mind?" style="width: 55vw; "/>
     <button style="min-width: fit-content;">Post</button>
     </form>
    </div>
    <center><h4 style="margin-top: 1vh;">My Feed</h4></center>
-   <div class="mobPostFeed">
-    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
-    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
-    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
-    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
-    <div class="compPost"><img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>Fake User</h4> <i class="bi bi-hand-thumbs-up"></i><i class="bi bi-hand-thumbs-down"></i><i class="bi bi-person-plus"></i><i class="bi bi-flag"></i></span><p3>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p3></span> </div>
+   <div class="mobPostFeed" id="mobPostFeed">
+   
    </div>
    <div class="mobProfInfo">
     <img src="./icons8-name-50.png" width="60px" height="60px"/>
-    <h2>Your Info</h2>
+    <h2 id="mobUsername" >Your Info</h2>
     <div class="details">
         <span class="posts">
         <p2>Posts</p2>
-        <center><h6>10</h6></center>
+        <center><h6 id="mobPosts">10</h6></center>
     </span>
         <span class="followers"><p2>Followers</p2>
-            <center><h6>1700</h6></center>
+            <center><h6 id="mobFollowers">1700</h6></center>
         </span>
         <span class="following"><p2>Following</p2>
-        <center><h6>100</h6></center>
+        <center><h6 id="mobFollowing">100</h6></center>
         </span>
     </div>
 </div> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
    <script src="./dashboard.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  
     
   </body>
 </html>

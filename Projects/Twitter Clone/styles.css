@@ -619,7 +619,6 @@ overflow: auto;
   flex-direction: column
   ;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .topDown h4 {
@@ -643,6 +642,7 @@ overflow: auto;
   display: flex;
   flex-direction: row;
   gap: .5vw;
+
 }
 .engagement i {
   display: flex;
