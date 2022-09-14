@@ -13,6 +13,7 @@ let mobPosts = document.getElementById('mobPosts');
 let mobFollowers = document.getElementById('mobFollowers');
 let mobFollowing = document.getElementById('mobFollowing');
 
+console.log(window,localStorage)
 
 const loggedIn = ((username, posts, followers, following) => {
 //DESKTOP 
@@ -45,10 +46,11 @@ news api calls
 
 let postBox = document.getElementById('postBox');
 let postBody = document.getElementById('postBody');
+let newsBody = document.getElementById('dashRight')
 //mobile
 let mobPostBody = document.getElementById('mobPostFeed');
 let mobPostBox = document.getElementById('userPost');
-
+let mobNewsBod = document.getElementById('mobNewsBod')
 
 
 let alerts = document.getElementById('alerts');
@@ -57,7 +59,7 @@ let mobAlert = document.getElementById('notifyVal');
 let counter = 0;
 let compCount = 0;
 
-let followed = 0;
+
 
 let firstName = ["Mike", "Tom", "Harry", "Pam", "Sam", "Julie"];
 let lastName = ["P", "R", "P", "Carr", "F", "W", 'A'];
@@ -95,15 +97,16 @@ if (actionCount === 0) {
 return
 })
  
-    compCount++;
+   
     alerts.innerHTML = compCount;
+    compCount++;
    // mobAlert.innerHTML = compCount;
 }
 
 
 setInterval(()=>{
 compPost();
-}, 20000);
+}, 30000);
 
 
 // 
@@ -245,10 +248,11 @@ if (actionCount === 0) {
 
 return
 })
-    compCount++;
+    
     mobAlert.innerHTML = compCount;
    // mobAlert.innerHTML = compCount;
-}
+   
+}   
 
 setInterval(()=>{
 mobCompPost();
@@ -290,13 +294,15 @@ const logOut = async (name) => {
   
   let confirm =  window.confirm('Are you sure?');
   
+
+
 if (confirm) {
  await window.location.assign('index.html')
  await alert(`Signed out from ${name}`) 
+ window.localStorage.clear()
  //send updated values to firebase
  
- 
- window.localStorage.clear();
+
   
 }
 
@@ -323,15 +329,35 @@ with id, date, time, and value args
 4) update innerhtml of value
 5) setInterval function to run every 20 secs 
 */
+let url = 'https://api.goperigon.com/v1/all?source=nbcnews.com&source=cnbc.com&source=bbc.co.uk&language=en&from=2022-09-11&apiKey=b31f1960-f024-4999-8fcb-056a4bcf7434'
+
+
 
 const newsFetch = async ()=> {
-    await fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-08-09&sortBy=publishedAt&apiKey=API_KEY')
-    .then(()=>{
+ let randomNum = Math.floor(Math.random()*10) 
+  await fetch(url)
+   .then(response=>response.json())
+    .then( async data=>{
+        console.log(data.articles)
+ let newsDiv = document.createElement('div');
+ let url = data.articles[randomNum].url
+let title = data.articles[randomNum].title
+ let imageUrl = data.articles[randomNum].imageUrl 
+let source = data.articles[randomNum].source.domain
+ 
+ newsDiv.setAttribute('class', 'newsPost');
+    newsDiv.innerHTML = `<span style="display: flex; gap: 1vw;"><a href="${data.articles[randomNum].url}"><p1>${data.articles[randomNum].title}</p1></a><img width="60px" height="60px" src="${ data.articles[randomNum].imageUrl}"/></span><p4>${data.articles[randomNum].source.domain}</p4>`
+    newsBody.appendChild(newsDiv)
+    mobAppend(url, title, imageUrl, source)
 
-    })
+})
+
 }
 
 
+setInterval(()=>{
+newsFetch();
+},20000)
 
 
 
@@ -340,8 +366,21 @@ const newsFetch = async ()=> {
 
 //MOBILE
 
+const mobAppend = async (one,two,three,four) => {
+    let newsDiv = document.createElement('div');
+    newsDiv.setAttribute('class', 'newsPost');
+    newsDiv.innerHTML = `<span style="display: flex; gap: 1vw;"><a href="${one}"><p1>${two}</p1></a><img width="60px" height="60px" src="${three}"/></span><p4>${four}</p4>`
+    mobNewsBod.appendChild(newsDiv)
+}
+
 /* 
 
+  let botDiv = document.createElement('div');
+    botDiv.setAttribute('class', 'compPost');
+    let date = new Date().toLocaleDateString() + " " +  new Date().toLocaleTimeString()
+    botDiv.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement" id="iconsDiv"><h4>${"@"+randOne + randTwo + randNum}</h4><span style="display: flex; flex-direction: row; gap: .5vw;  " id="mobActions"><i id="like${compCount}" class="bi bi-hand-thumbs-up"></i><i id="dislike${compCount}" class="bi bi-hand-thumbs-down"></i></span><i onclick="icnMethds.follow()" id="follow${compCount}" class="bi bi-person-plus"></i><i onclick="icnMethds.report()" id="report${compCount}" class="bi bi-flag"></i><p3>${date}</p3></span><p3>Computer post</p3></span>`
+    mobPostBody.prepend(botDiv);
+    let icons = document.getElementById('mobActions');
 
 
 

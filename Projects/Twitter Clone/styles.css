@@ -629,6 +629,8 @@ overflow: auto;
 
 .newsPost {
   display: flex;
+  gap: 1vw;
+  flex-direction: column;
   padding-top: var(--height);
   height: 15vh;
   width: 90%;
@@ -636,6 +638,20 @@ overflow: auto;
   border-radius: 12px;
   min-height: fit-content;
   padding-left: 1vw;
+  justify-content: center;
+  padding-right: .5vw;
+}
+
+#newsPost {
+  display: flex;
+  padding-top: var(--height);
+  height: 15vh;
+  width: 90%;
+  background-color: rgb(242, 242, 242);
+  border-radius: 12px;
+  min-height: fit-content;
+  padding-left: 1vw;
+
 }
 
 .engagement {

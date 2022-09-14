@@ -18,12 +18,12 @@
        <img src="./logo.svg" href="logo"/>
     </div>
     <div class="right">
-<form class="form">
+<form class="form" id="desktop">
     <center>
-    <input placeholder="Email" type="email" required/>
-    <input type="text" placeholder="Username" required/>
-    <input type="text" placeholder="Name" required / >
-    <input type="text" placeholder="Password" minlength="6" required/>
+    <input name="email" placeholder="Email" type="email" required/>
+    <input name="username" type="text" placeholder="Username" required/>
+    <input name="name" type="text" placeholder="Name" required / >
+    <input name="password" type="password" placeholder="Password" minlength="6"  required/>
     <center><p2>13 or over?</p2></center>
         <input type="checkbox" id="ageValid" required />
     <center><button class="signUpBtn">
@@ -43,7 +43,7 @@
         <input placeholder="Email" name="email" value="" type="email" required />
         <input placeholder="Username" name="username" value="" required />
         <input placeholder="Name" value="" name="name" required/>
-        <input placeholder="Password" name="password"  value="" minlength="6" required />
+        <input placeholder="Password" type="password" name="password"  value="" minlength="6" required />
         <p2>13 or over?</p2>
         <input type="checkbox" name="checkbox" value="" id="ageValid" required/>
         
