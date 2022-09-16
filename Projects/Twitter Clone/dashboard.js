@@ -18,9 +18,126 @@ let mobFollowing = document.getElementById('mobFollowing');
 
 let link = 'https://sitter-1e900-default-rtdb.firebaseio.com/Users.json'
 
-const post = async (user) => {
-    await fetch (link, {
+let postUrl = 'https://sitter-posts-default-rtdb.firebaseio.com/Posts.json'
+
+let idCount = 0
+
+
+
+function postDb (user, post, id) {
+    this.username = user;
+    this.post = post;
+    this.id = id;
+}
+
+
+
+const update = async (user, value) => {
+    await fetch (postUrl, {
+        method: "GET", 
+        body: JSON.stringify(value),
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }
+).then(response => response.json())
+.then(data => {
+ 
+  for (const [key, value] of Object.entries(data)) {
+    console.log(key, value)
+ console.log(value.password)
+    if (user === value.username) {
+
+      //post function call here
+//find name of object that contains this key val pair
+//  const category = Object.entries(book).find(([, e]) => Object.keys(e).includes(section)); 
+
+
+            return;
+        }
+    }
+return
+})
+
+}
+
+
+
+
+
+let PutRequest = (val) => {
+    // Sending PUT request with fetch API in javascript
+    fetch("https://reqres.in/api/users/2", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      method: "PUT",
+   
+      // Sending only the fields that to be updated
+      body: JSON.stringify({      
+        email: "hello@geeky.com",
+        first_name: "Geeky"
+      })
+    })
+      .then(function (response) {
+   
+        // Console.log(response);
+        return response.json();
+      })
+      .then( (data)=> {
+         
+  for (const [key, value] of Object.entries(data)) {
+    console.log(key, value)
+ console.log(value.password)
+    if (val === value.post) {
+      //post function call here
+//find name of object that contains this key val pair
+//  const category = Object.entries(book).find(([, e]) => Object.keys(e).includes(section)); 
+
+
+            return;
+        }
+    }
+        console.log(data);
+      });
+  };
+   
+  
+
+
+
+
+
+
+
+
+
+
+const post = async (user, post) => {
+    await fetch (postUrl, {
         method: "POST", 
+     
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },   
+        body: JSON.stringify(new postDb(username, post)),
+        mode: 'cors',
+    }
+)
+
+}
+
+//find object value that equals val and delete that obj for
+//delete
+
+
+
+const del = async (user) => {
+    await fetch (postUrl, {
+        method: "DELETE", 
      
         headers: {
             'Accept': 'application/json',
@@ -32,6 +149,7 @@ const post = async (user) => {
 )
 
 }
+
 
 
 
@@ -146,14 +264,28 @@ let icnMethds = {
     },
     report: ()=> alert('Post has been reported'),
 
-    edit: ()=> {
+    edit: function() {
         let val = prompt('Update Post')
+        //fn to patch obj property vals in DB
+        
 
 
 }
 
 }
 
+
+
+/*
+
+get icon
+append icon with delete icon
+add functionality to get the id of that post
+create delete http method fn
+
+
+
+*/
 
 
 
@@ -172,10 +304,12 @@ newPost.setAttribute('class', 'compPost');
 //add onclick attr
 let time = new Date().toLocaleDateString() + " " +  new Date().toLocaleTimeString()
 
-newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4><i id="del" class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p spellcheck="false"  contenteditable="true">${value}</p></span>`
+newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4><i id="edit" class="bi bi-pencil-square"></i><i id="del" class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p spellcheck="false">${value}</p></span>`
 newPost.setAttribute('id', `post${counter}`)
 postBody.prepend(newPost);
 posts++
+
+post(localStorage.getItem('email'), value)
 
 let del = document.getElementById('del');
 del.addEventListener('click', (e)=>{
@@ -218,10 +352,11 @@ let createMobPost = (name, value)=>{
     //add onclick attr
     let time = new Date().toLocaleDateString() + " " +  new Date().toLocaleTimeString()
     
-    newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4><i id='mobDel' class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p spellcheck="false"  contenteditable="true">${value}</p></span>`
+    newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4><i id="edit" class="bi bi-pencil-square"></i><i id='mobDel' class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p spellcheck="false">${value}</p></span>`
     newPost.setAttribute('id', `post${counter}`)
     mobPostBody.prepend(newPost);
     posts++
+    post(localStorage.getItem('email'), value)
     let del = document.getElementById('mobDel');
     del.addEventListener('click', (e)=>{
     
@@ -360,6 +495,8 @@ with id, date, time, and value args
 4) update innerhtml of value
 5) setInterval function to run every 20 secs 
 */
+
+
 let url = 'https://api.goperigon.com/v1/all?source=nbcnews.com&source=cnbc.com&source=bbc.co.uk&language=en&from=2022-09-11&apiKey=b31f1960-f024-4999-8fcb-056a4bcf7434'
 
 

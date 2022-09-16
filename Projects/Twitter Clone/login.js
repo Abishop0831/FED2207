@@ -43,7 +43,9 @@ const load = async (email, password) => {
     console.log(key, value)
  console.log(value.password)
     if (email === value.email && password === value.password) {
-        window.localStorage.setItem('username', value.username)   
+      console.log(key)  
+      
+      window.localStorage.setItem('username', value.username)   
         accepted(value.username);
             return;
         }
