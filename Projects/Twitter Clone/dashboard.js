@@ -13,7 +13,31 @@ let mobPosts = document.getElementById('mobPosts');
 let mobFollowers = document.getElementById('mobFollowers');
 let mobFollowing = document.getElementById('mobFollowing');
 
-console.log(window,localStorage)
+
+
+
+let link = 'https://sitter-1e900-default-rtdb.firebaseio.com/Users.json'
+
+const post = async (user) => {
+    await fetch (link, {
+        method: "POST", 
+     
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },   
+        body: JSON.stringify(user),
+        mode: 'cors',
+    }
+)
+
+}
+
+
+
+
+
+
 
 const loggedIn = ((username, posts, followers, following) => {
 //DESKTOP 
@@ -121,6 +145,13 @@ let icnMethds = {
         // add disable
     },
     report: ()=> alert('Post has been reported'),
+
+    edit: ()=> {
+        let val = prompt('Update Post')
+
+
+}
+
 }
 
 
