@@ -24,18 +24,17 @@ let idCount = 0
 
 
 
-function postDb (user, post, id) {
+function postDb (user, post) {
     this.username = user;
     this.post = post;
-    this.id = id;
 }
 
 
 
-const update = async (user, value) => {
+const update = async (user, val) => {
     await fetch (postUrl, {
         method: "GET", 
-        body: JSON.stringify(value),
+        body: JSON.stringify(),
         mode: 'cors',
         headers: {
             'Content-Type': 'application/json',
@@ -52,7 +51,7 @@ const update = async (user, value) => {
       //post function call here
 //find name of object that contains this key val pair
 //  const category = Object.entries(book).find(([, e]) => Object.keys(e).includes(section)); 
-
+putRequest(key, val)
 
             return;
         }
@@ -66,9 +65,9 @@ return
 
 
 
-let PutRequest = (val) => {
+let putRequest = (key, val) => {
     // Sending PUT request with fetch API in javascript
-    fetch("https://reqres.in/api/users/2", {
+    fetch(`https://sitter-posts-default-rtdb.firebaseio.com/Posts/${key}.json`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
@@ -77,8 +76,8 @@ let PutRequest = (val) => {
    
       // Sending only the fields that to be updated
       body: JSON.stringify({      
-        email: "hello@geeky.com",
-        first_name: "Geeky"
+      
+        post: `${val}`
       })
     })
       .then(function (response) {
@@ -87,19 +86,6 @@ let PutRequest = (val) => {
         return response.json();
       })
       .then( (data)=> {
-         
-  for (const [key, value] of Object.entries(data)) {
-    console.log(key, value)
- console.log(value.password)
-    if (val === value.post) {
-      //post function call here
-//find name of object that contains this key val pair
-//  const category = Object.entries(book).find(([, e]) => Object.keys(e).includes(section)); 
-
-
-            return;
-        }
-    }
         console.log(data);
       });
   };
@@ -264,10 +250,10 @@ let icnMethds = {
     },
     report: ()=> alert('Post has been reported'),
 
-    edit: function() {
+    edit: async function() {
         let val = prompt('Update Post')
         //fn to patch obj property vals in DB
-        
+        update(username, val)
 
 
 }
@@ -289,6 +275,7 @@ create delete http method fn
 
 
 
+
 //Human post
 const createPost = (name, value) => {
 //exit condition
@@ -304,10 +291,11 @@ newPost.setAttribute('class', 'compPost');
 //add onclick attr
 let time = new Date().toLocaleDateString() + " " +  new Date().toLocaleTimeString()
 
-newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4><i id="edit" class="bi bi-pencil-square"></i><i id="del" class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p spellcheck="false">${value}</p></span>`
+newPost.innerHTML = `<img width="40px" height="40px" style="margin-bottom: 2vh;" src="./icons8-name-50.png"/><span class="topDown"><span class="engagement"><h4>${name}</h4><i id="edit" onclick="icnMethds.edit()" class="bi bi-pencil-square"></i><i id="del" class="bi bi-x-square-fill"></i><p3>${time}</p3></span><p spellcheck="false">${value}</p></span>`
 newPost.setAttribute('id', `post${counter}`)
 postBody.prepend(newPost);
 posts++
+
 
 post(localStorage.getItem('email'), value)
 

@@ -640,6 +640,7 @@ overflow: auto;
   padding-left: 1vw;
   justify-content: center;
   padding-right: .5vw;
+  margin-bottom: 1vh;
 }
 
 #newsPost {

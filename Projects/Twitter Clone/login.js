@@ -44,7 +44,6 @@ const load = async (email, password) => {
  console.log(value.password)
     if (email === value.email && password === value.password) {
       console.log(key)  
-      
       window.localStorage.setItem('username', value.username)   
         accepted(value.username);
             return;
@@ -76,12 +75,7 @@ loginMobile.addEventListener('submit', async (e)=> {
    
     
     load(email, password);
-
-  
-
-  
-  
-     
+    
 
   //get username from storage store in var and
   //initiate with val
