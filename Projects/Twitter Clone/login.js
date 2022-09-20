@@ -88,8 +88,9 @@ loginMobile.addEventListener('submit', async (e)=> {
 
 
 const accepted = (name) => {
-    window.location.assign('dashboard.html')
-    alert(`signed in as ${name}`)  
+    window.location.assign('loading.html')
+    window.localStorage.setItem('username', `${name}`)
+    window.localStorage.setItem('dashboard', 'dashboard')
     
 }
  

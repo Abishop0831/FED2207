@@ -20,8 +20,9 @@ let link = 'https://sitter-1e900-default-rtdb.firebaseio.com/Users.json'
 
 let postUrl = 'https://sitter-posts-default-rtdb.firebaseio.com/Posts.json'
 
-let idCount = 0
 
+
+alert(`signed in as ${username}`)
 
 
 function postDb (user, post) {
@@ -410,7 +411,7 @@ return
 
 setInterval(()=>{
 mobCompPost();
-},20000)
+},8000)
 
 mobPostBox.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -451,9 +452,9 @@ const logOut = async (name) => {
 
 
 if (confirm) {
- await window.location.assign('index.html')
+ await window.location.assign('loading.html')
+ await window.localStorage.setItem('landing', 'landing')
  await alert(`Signed out from ${name}`) 
- window.localStorage.clear()
  //send updated values to firebase
  
 

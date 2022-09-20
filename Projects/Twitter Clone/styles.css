@@ -12,11 +12,55 @@ body {
     min-width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    
     margin: 0px;
+    
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
 }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+
+
+
 /*lANDING PAGE*/
+
+
+
+.mobileLoad {
+  display: none;
+}
 
 
 .first {
@@ -291,6 +335,11 @@ background-color: black;
   display: flex;
 margin-left: 3vw;
 margin-top: 1vh;
+-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation: fadein 2s; /* Firefox < 16 */
+ -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+     animation: fadein 2s
 
 }
 
@@ -324,6 +373,26 @@ margin-top: 1vh;
   flex-direction: column !important;
 }
 
+#pcLoad {
+  display: none !important;
+}
+
+#myVideo {
+  display: none !important;
+}
+
+.mobileLoad {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(137,17,166,1) 35%, rgba(0,212,255,1) 100%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+
+}
 
 /* Mobile over*/
 
@@ -539,6 +608,11 @@ padding-top: 1vh;
   flex-wrap: wrap;
   gap: .5vw;
   min-height: fit-content;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s
 }
 
 .userPost form {
@@ -601,7 +675,11 @@ overflow: auto;
   padding-bottom: 1vh;
   -webkit-box-shadow: 0px 16px 15px -17px rgba(0,0,0,0.61); 
   box-shadow: 0px 16px 15px -17px rgba(0,0,0,0.61);
- 
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s
 }
 
 .compPost i {
@@ -641,6 +719,11 @@ overflow: auto;
   justify-content: center;
   padding-right: .5vw;
   margin-bottom: 1vh;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s
 }
 
 #newsPost {
@@ -652,7 +735,11 @@ overflow: auto;
   border-radius: 12px;
   min-height: fit-content;
   padding-left: 1vw;
-
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s
 }
 
 .engagement {

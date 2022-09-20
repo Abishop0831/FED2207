@@ -82,10 +82,9 @@ let counter = 0;
 
 
  let accepted = (username) => {
-        window.location.assign('dashboard.html')
+        window.location.assign('loading.html')
         window.localStorage.setItem('username', `${username}`)
-        alert(`signed in as ${username}`)  
-        
+        window.localStorage.setItem('dashboard', 'dashboard')
     }
 
 
