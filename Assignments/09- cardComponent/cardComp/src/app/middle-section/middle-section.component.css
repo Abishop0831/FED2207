@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200&display=swap');
+
 
 .middle {
     display: flex;
@@ -46,4 +48,14 @@ button:hover {
      background-color: white;
      color: #006971;
     }
+
+    p {
+        margin-bottom: 0px;
+       }
    }
+
+   h1 {
+    font-family: 'Big Shoulders Display', cursive !important;
+    font-size: 3rem;
+}
+

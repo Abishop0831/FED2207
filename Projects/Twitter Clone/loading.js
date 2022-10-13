@@ -1,5 +1,6 @@
 window.addEventListener('load', ()=>{
 
+    
 if (window.localStorage.getItem('login') === 'login') {
    setTimeout(async ()=>{
 window.location.assign('login.html')

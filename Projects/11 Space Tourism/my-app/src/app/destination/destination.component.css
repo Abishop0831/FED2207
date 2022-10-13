@@ -1,0 +1,144 @@
+.pc {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    min-height: 104vh !important;
+    flex-direction: column;
+    gap: 3vh;
+    background-image: url(./pc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.leftRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#pills-tab {
+    display: flex !important;
+    justify-self: flex-end !important;
+    align-self: flex-end;
+    margin-right: 14.5vw;
+}
+
+#pills-home {
+    
+}
+
+.tab-content {
+    display: flex;
+    width: 100%;
+    height: 65vh;
+}
+
+.innerLr {
+    display: flex;
+    flex-direction: row !important;
+    height: 100%;
+    width: 100%;
+    gap: 23.5vw;
+    color: white;
+    padding-bottom: 2vh;
+}
+
+.sect {
+    margin-left: 11vw;
+    width: 62vh;
+    height: 62vh;
+    padding-bottom: 2vh;
+    background-repeat: no-repeat;
+}
+
+.topDown {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    height: 100%;
+    width: 24vw;
+}
+
+.distances {
+    display: flex;
+    flex-direction: row !important;
+    gap: 2vw;
+}
+
+p {
+    line-height: 2;
+}
+
+.nav-link:focus, .nav-link:hover {
+    background-color: transparent;
+    border-radius: 0px;
+    border-bottom: 2px solid white;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+}
+
+
+button, .nav-link:active, .nav-pills, .nav-link.active {
+    background-color: transparent;
+    color: white;
+}
+
+button:hover {
+    color: rgba(255, 255, 255, 0.482);
+}
+
+.mobile {
+    display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+   .pc {
+    display: none !important;
+   }
+
+   .mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    width: fit-content !important;
+    height: 100vh !important;
+    gap: 4vh;
+    background-image: url(./destinationmob.jpg);
+}   
+
+.mobileTd {
+    display: flex;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: fit-content !important;
+    color: white;
+    justify-content: center;
+    padding-left: 2vw;
+    padding-right: 4vw;
+    text-align: center;
+}
+
+img {
+    margin-left: 33vw;
+}
+
+h4 {
+    display: flex !important;
+  margin-left: 10vw;
+
+}
+
+#pills-tab {
+    display: flex;
+    justify-items: center;
+    margin-top: -50vh !important;
+    width: 100% !important;
+    margin-right: -6vw;
+   
+}
+  }

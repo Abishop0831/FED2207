@@ -1,0 +1,167 @@
+<div class="pc">
+<app-navbar  style="display: flex; justify-self:flex-end; width: 100%;"></app-navbar>
+<h4 style="color: white; margin-left: 7.5vw;"><span style="color: gray;">01</span> PICK YOUR DESTINATION</h4>
+<section class="leftRight">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">MOON</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">MARS</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">EUROPA</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-four" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">TITAN</button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+             <section class="innerLr">
+              <img src="{{moonPic}}" class="sect"/>
+              <div class="topDown">
+                <h1>{{moon | uppercase}}</h1>
+                <p>{{moonDesc}}</p>
+                <hr/>
+                <section class="distances">
+                  <div><p>AVG. DISTANCE</p> <h4>{{moonDist}}</h4></div>
+                  <div><p>EST. TRAVEL TIME</p><h4>{{moonTravel}}</h4> </div>
+                </section>
+              </div></section> </div>
+
+
+
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+              <section class="innerLr">
+              <img src="{{marsPic}}" class="sect"/>
+              <div class="topDown">
+                <h1>{{mars | uppercase}}</h1>
+                <p>{{marsDesc}}</p>
+                <hr/>
+                <section class="distances">
+                  <div><p>AVG. DISTANCE</p> <h4>{{marsDist}}</h4></div>
+                  <div><p>EST. TRAVEL TIME</p><h4>{{marsTravel}}</h4> </div>
+                </section>
+              </div></section></div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+              <section class="innerLr">
+                <img src="{{europaPic}}" class="sect"/>
+                <div class="topDown">
+                  <h1>{{europa | uppercase}}</h1>
+                  <p>{{europaDesc}}</p>
+                  <hr/>
+                  <section class="distances">
+                    <div><p>AVG. DISTANCE</p> <h4>{{europaDist}}</h4></div>
+                    <div><p>EST. TRAVEL TIME</p><h4>{{europaTravel}}</h4> </div>
+                  </section>
+                </div></section>
+
+
+            </div>
+            <div class="tab-pane fade" id="pills-four" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+              <section class="innerLr">
+                <img src="{{europaPic}}" class="sect"/>
+                <div class="topDown">
+                  <h1>{{titan | uppercase}}</h1>
+                  <p>{{titanDesc}}</p>
+                  <hr/>
+                  <section class="distances">
+                    <div><p>AVG. DISTANCE</p> <h4>{{titanDist}}</h4></div>
+                    <div><p>EST. TRAVEL TIME</p><h4>{{titanTravel}}</h4> </div>
+                  </section>
+                </div></section>
+
+
+
+            </div>
+          </div>
+         
+</section>
+</div>
+
+
+<div class="mobile">
+<app-navbar style="width: 100vw;"></app-navbar>
+<h4 style="color: white;"><span style="color: gray; margin-right: 2vw;">01</span> PICK YOUR DESTINATION</h4>
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+  <section class="mobileTd">
+<img src="{{moonPic}}" width="125" height="125" style="margin-bottom: 8vh;"/>
+<h1>{{moon | uppercase}}</h1>
+<p>{{moonDesc}}</p>
+<hr/>
+<section class="distances">
+  <div><p>AVG. DISTANCE</p> <h4>{{moonDist}}</h4></div>
+  <div><p>EST. TRAVEL TIME</p><h4>{{moonTravel}}</h4> </div>
+</section>
+</section>
+</div>
+
+
+<div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+  <section class="mobileTd">
+  <img src="{{marsPic}}" width="125" height="125" style="margin-bottom: 8vh;"/>
+
+    <h1>{{mars | uppercase}}</h1>
+    <p>{{marsDesc}}</p>
+    <hr/>
+    <section class="distances">
+      <div><p>AVG. DISTANCE</p> <h4>{{marsDist}}</h4></div>
+      <div><p>EST. TRAVEL TIME</p><h4>{{marsTravel}}</h4> </div>
+    </section>
+  </section></div>
+
+  <div class="tab-pane fade" id="pills-contact2" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+    <section class="mobileTd">
+      <img src="{{europaPic}}" width="125" height="125"  style="margin-bottom: 8vh;"/>
+     
+        <h1>{{europa | uppercase}}</h1>
+        <p>{{europaDesc}}</p>
+        <hr/>
+        <section class="distances">
+          <div><p>AVG. DISTANCE</p> <h4>{{europaDist}}</h4></div>
+          <div><p>EST. TRAVEL TIME</p><h4>{{europaTravel}}</h4> </div>
+        </section>
+      </section>
+  </div>
+
+
+  <div class="tab-pane fade" id="pills-four2" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+    <section class="mobileTd">
+      <img src="{{europaPic}}" width="125" height="125"  style="margin-bottom: 8vh;"/>
+      
+        <h1>{{titan | uppercase}}</h1>
+        <p>{{titanDesc}}</p>
+        <hr/>
+        <section class="distances">
+          <div><p>AVG. DISTANCE</p> <h4>{{titanDist}}</h4></div>
+          <div><p>EST. TRAVEL TIME</p><h4>{{titanTravel}}</h4> </div>
+        </section>
+      </section>
+
+
+
+  </div>
+
+
+
+</div>
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home2" type="button" role="tab" aria-controls="pills-home" aria-selected="true">MOON</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile2" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">MARS</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact2" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">EUROPA</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-four2" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">TITAN</button>
+  </li>
+</ul>
+
+</div>

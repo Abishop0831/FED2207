@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "test-fbec2": {
+      "hosting": {
+        "cardComp": [
+          "test-fbec2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "test-fbec2"
+  }
+}

@@ -64,6 +64,38 @@ return
 
 
 
+const updateDel = async (user, val) => {
+    await fetch (postUrl, {
+        method: "GET", 
+        body: JSON.stringify(),
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }
+).then(response => response.json())
+.then(data => {
+ 
+  for (const [key, value] of Object.entries(data)) {
+    console.log(key, value)
+ console.log(value.password)
+    if (user === value.username) {
+
+      //post function call here
+//find name of object that contains this key val pair
+//  const category = Object.entries(book).find(([, e]) => Object.keys(e).includes(section)); 
+putRequest(key, val)
+
+            return;
+        }
+    }
+return
+})
+
+}
+
+
+
 
 
 let putRequest = (key, val) => {
@@ -93,7 +125,20 @@ let putRequest = (key, val) => {
    
   
 
+const del = async (user) => {
+    await fetch (postUrl, {
+        method: "DELETE", 
+     
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },   
+        body: JSON.stringify(user),
+        mode: 'cors',
+    }
+)
 
+}
 
 
 
@@ -122,20 +167,7 @@ const post = async (user, post) => {
 
 
 
-const del = async (user) => {
-    await fetch (postUrl, {
-        method: "DELETE", 
-     
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },   
-        body: JSON.stringify(user),
-        mode: 'cors',
-    }
-)
 
-}
 
 
 
@@ -486,7 +518,7 @@ with id, date, time, and value args
 */
 
 
-let url = 'https://api.goperigon.com/v1/all?source=nbcnews.com&source=cnbc.com&source=bbc.co.uk&language=en&from=2022-09-11&apiKey=b31f1960-f024-4999-8fcb-056a4bcf7434'
+let url = 'https://api.goperigon.com/v1/all?source=nbcnews.com&source=cnbc.com&source=bbc.co.uk&language=en&from=2022-09-11&apiKey=66c4bf66object450f4be89fd8a6e704346232'
 
 
 

@@ -1,0 +1,96 @@
+.pc {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    gap: 3vh;
+    background-image: url(./tech.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.leftRight {
+    display: flex;
+    flex-direction: row;
+    gap: 8vw;
+    width: 80%;
+    height: 75vh;
+    margin-left: 7.5vw;
+    align-items: center;
+    
+}
+
+.topDown {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    height: 100%;
+    width: 24vw;
+    align-self: center !important;
+    justify-self: center !important;
+    color: white;
+   padding-top: 20vh;
+}
+
+.img {
+    width: 66vh;
+    height: 66vh;
+    margin-left: 10vw;
+}
+
+.innerLr {
+    display: flex;
+    flex-direction: row;
+    gap: 4vw;
+    width: 100%;
+    height: 100%;
+
+}
+
+.mobile {
+    display: none !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+   .pc {
+    display: none !important;
+   }
+   .mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 110vh !important;
+    width: 100% !important;
+    gap: 7vh !important;
+    background-image: url(./techMobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center !important;
+   }
+   .mobileTd {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: fit-content !important;
+    color: white;
+    align-items: center;
+    padding-left: 2vw;
+    padding-right: 4vw;
+    text-align: center;
+}
+
+img {
+    width: 100vw !important;
+    margin-bottom: 10vh;
+}
+
+#pills-tab {
+    display: flex !important;
+    justify-items: center;
+    margin-top: -53.5vh !important;
+    width: 100% !important;
+    margin-left: 60vw;
+    
+}
+
+  }

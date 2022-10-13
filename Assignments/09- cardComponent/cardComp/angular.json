@@ -94,6 +94,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "cardComp:build:production",
+            "firebaseProject": "test-fbec2",
+            "firebaseHostingSite": "test-fbec2"
+          }
         }
       }
     }
