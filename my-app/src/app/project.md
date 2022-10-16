@@ -8,7 +8,9 @@ needed
 2 choose data structure to store this data
 (interface)
 
-3 create directive to add required items to bootstrap card with data bind. 
+3a create directive to add required items to bootstrap card with data bind. 
+
+3b add Click event handler on card to access the 2nd page
 
 4 style card to fit mockup
 
