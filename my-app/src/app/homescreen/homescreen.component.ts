@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-homescreen',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomescreenComponent implements OnInit {
 
-  constructor() { }
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
+    console.log(value)
+  }
+
+
+
+
+
+
+  constructor() { console.log()}
 
   ngOnInit(): void {
   }

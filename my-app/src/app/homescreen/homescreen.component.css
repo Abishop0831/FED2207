@@ -31,7 +31,7 @@ border: 0px !important;
 }
 
 
-.countries {
+.countries, .tab-content {
     display: flex !important;
     flex-direction: row;
     gap: 5vw;
