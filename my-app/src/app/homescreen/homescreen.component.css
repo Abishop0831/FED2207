@@ -3,8 +3,9 @@
     height: 100vh;
     width: 100%;
     justify-items: center !important;
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 4vh;
+    background-color: #F2F2F2;
 }
 
 .inputAndFilter {
@@ -14,4 +15,49 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 50vw;
+    flex-wrap: wrap !important;
+    padding-left: 3vw;
+    padding-right: 3vw;
 }
+
+.btn-secondary {
+    color: black;
+    border: 0px;
+    background-color: white !important;
+}
+
+.dropdown-menu {
+border: 0px !important;
+}
+
+
+.countries {
+    display: flex !important;
+    flex-direction: row;
+    gap: 5vw;
+    width: 100% !important;
+    height: 80vh !important;
+    overflow-y: auto;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 480px) {
+
+    .inputAndFilter {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 3vh !important;
+    }
+
+
+    .input-group {
+        width: 95vw !important;
+    }
+
+
+
+  }
+
