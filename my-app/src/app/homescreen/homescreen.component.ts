@@ -17,6 +17,7 @@ export class HomescreenComponent implements OnInit {
 
 
 public data:Array<any> = []
+public filtered:Array<any> = []
 
 
   @Output() newItemEvent = new EventEmitter<string>();
@@ -25,7 +26,16 @@ public data:Array<any> = []
     this.newItemEvent.emit(value);
     console.log(value)
     //fn to make API call using this value
-    ajax(``)
+    const filter$ = ajax<any>(`https://restcountries.com/v3.1/region/${value}`).pipe(
+      map(res=>res.response.map(val=> this.filtered.push(val)
+      ))
+    )
+    console.log(this.filtered)
+
+
+    filter$.subscribe({
+      next: value=>console.log(value)
+    })
   }
 
 
@@ -38,7 +48,7 @@ public data:Array<any> = []
   ngOnInit(): void {
    
 const countryAll$ =ajax<any>('https://restcountries.com/v3.1/all').pipe(
-  map(res=>res.response.map(user=> this.data.push(user)
+  map(res=>res.response.map(val=> this.data.push(val)
   
   ))
 )
