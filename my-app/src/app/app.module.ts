@@ -6,12 +6,14 @@ import { HomescreenComponent } from './homescreen/homescreen.component';
 import { InfoComponent } from './info/info.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomescreenComponent,
     InfoComponent,
-    NavbarComponent
+    NavbarComponent,
+ 
   ],
   imports: [
     BrowserModule
