@@ -31,20 +31,56 @@ border: 0px !important;
 }
 
 
-.countries, .tab-content, #v-pills-all, #v-pills-africa, #v-pills-america, #v-pills-oceania, #v-pills-asia, #v-pills-europe  {
+.countries, .tab-content {
     display: flex !important;
-    flex-direction: row;
-    gap: 5vw;
+    flex-direction: row !important;
+    gap: 5vw !important;
     width: 100% !important;
-    height: 80vh !important;
+    height: fit-content !important;
     overflow-y: auto;
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding-left: 3vw !important;
+    padding-right: 3vw !important;
     flex-wrap: wrap;
+  
 }
 
+#v-pills-all, #v-pills-africa, #v-pills-europe, #v-pills-asia, #v-pills-america, #v-pills-oceania {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vh;
 
+}
 
+#v-pills-africa, #v-pills-europe, #v-pills-asia, #v-pills-america, #v-pills-oceania {
+    margin-top: -90vh;
+    
+}
+
+ #v-pills-asia {
+    margin-top: -110vh !important;
+ 
+}
+
+#v-pills-europe {
+    margin-top: -120vh !important;
+}
+
+#v-pills-america {
+    margin-top: -100vh;
+}
+
+#v-pills-oceania {
+    margin-top: -125vh !important;
+}
+
+.card-block {
+cursor: pointer;
+color: black;
+text-decoration: none !important;
+}
 
 @media screen and (max-width: 480px) {
 
@@ -53,6 +89,15 @@ border: 0px !important;
         flex-direction: column !important;
         width: 100% !important;
         gap: 3vh !important;
+    }
+
+#v-pills-all {
+    margin-top: 0px !important;
+}
+
+    #v-pills-africa, #v-pills-europe, #v-pills-asia, #v-pills-america, #v-pills-oceania { 
+
+margin-top: -80vh !important;        
     }
 
 

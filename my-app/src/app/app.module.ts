@@ -5,7 +5,14 @@ import { AppComponent } from './app.component';
 import { HomescreenComponent } from './homescreen/homescreen.component';
 import { InfoComponent } from './info/info.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
 
+
+const routes: Routes = [
+  { path: '', component: HomescreenComponent },
+  { path: 'info', component: InfoComponent },
+];
 
 @NgModule({
   declarations: [
@@ -16,8 +23,10 @@ import { NavbarComponent } from './navbar/navbar.component';
  
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule, 
+    RouterModule.forRoot(routes)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

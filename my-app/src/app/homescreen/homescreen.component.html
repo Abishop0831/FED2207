@@ -31,25 +31,26 @@
 <section class="countries" >
     <div class="tab-content" id="v-pills-tabContent" >
         <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0" >
-            <div class="card" style="width: 18rem;" *ngFor="let items of data">
-                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+            <div  class="card" style="width: 18rem;" *ngFor="let items of data">
+                <a class="card-block stretched-link text-decoration-none" (click)="route(items)"><img src="{{items.flags.png}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
                   <p><b>Region:</b> {{items.region}}</p>
                   <p><b>Capital:</b> {{items.capital}}</p>
-                </div>
+                </div></a>
               </div>
         </div>
         <div class="tab-pane fade" id="v-pills-africa" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="1">
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
-                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)"><img src="{{items.flags.png}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
                   <p><b>Region:</b> {{items.region}}</p>
                   <p><b>Capital:</b> {{items.capital}}</p>
-                </div>
+                </div></a>
               </div>
 
 
@@ -59,13 +60,14 @@
         </div>
         <div class="tab-pane fade" id="v-pills-america" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="2">
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
                 <img src="{{items.flags.png}}" class="card-img-top" alt="...">
-                <div class="card-body">
+               <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
                   <p><b>Region:</b> {{items.region}}</p>
                   <p><b>Capital:</b> {{items.capital}}</p>
-                </div>
+                </div></a> 
               </div>
 
 
@@ -76,13 +78,14 @@
         <div class="tab-pane fade" id="v-pills-asia" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="3">
 
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
                 <img src="{{items.flags.png}}" class="card-img-top" alt="...">
-                <div class="card-body">
+               <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
                   <p><b>Region:</b> {{items.region}}</p>
                   <p><b>Capital:</b> {{items.capital}}</p>
-                </div>
+                </div></a>
               </div>
 
 
@@ -91,13 +94,14 @@
         <div class="tab-pane fade" id="v-pills-europe" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="4">
 
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+               <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
                 <img src="{{items.flags.png}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
                   <p><b>Region:</b> {{items.region}}</p>
                   <p><b>Capital:</b> {{items.capital}}</p>
-                </div>
+                </div></a>
               </div>
 
 
@@ -106,13 +110,14 @@
         <div class="tab-pane fade" id="v-pills-oceania" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="5">
 
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
                 <img src="{{items.flags.png}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
                   <p><b>Region:</b> {{items.region}}</p>
                   <p><b>Capital:</b> {{items.capital}}</p>
-                </div>
+                </div></a>
               </div>
 
         

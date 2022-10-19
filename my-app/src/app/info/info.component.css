@@ -1,0 +1,10 @@
+.leftRight {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    gap: 5vw;
+    
+}
