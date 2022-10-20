@@ -43,9 +43,7 @@ public filtered:Array<any> = []
     console.log(this.filtered)
 
 
-    filter$.subscribe({
-      next: value=>console.log(value)
-    })
+    filter$.subscribe();
   }
 
 
