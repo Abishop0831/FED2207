@@ -15,8 +15,10 @@ public data : any
 public native: any
 public three: any
 public currency: any
+public languages: any
+public borders: any
 
-  constructor(private dataStore:DataStoreService) { }
+  constructor(private dataStore:DataStoreService, private router: Router ) { }
 
   ngOnInit(): void {
     this.dataStore.getCountry().pipe(
@@ -26,7 +28,14 @@ public currency: any
       this.data = this.Country.altSpellings.length -1
       this.currency = this.Country.currencies[this.three].name
     this.native = this.Country.altSpellings[this.data]
-    console.log(Object.values(this.Country.languages))
+    this.languages = Object.values(this.Country.languages)
+    this.borders = this.Country.borders
   }
+
+ route (data) {
+  //this.dataStore.setCountry(data);
+  //this.router.navigate(['/info'])
+  console.log(data);
+ }
 
 }

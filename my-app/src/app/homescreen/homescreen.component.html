@@ -8,7 +8,7 @@
         <span class="input-group-text" id="basic-addon1" style="background-color: white;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg></span>
-        <input  type="text" class="form-control" placeholder="countries" aria-label="Username" aria-describedby="basic-addon1" style="border-left: 0px !important;">
+        <input (keyup)='inputVal(this)' type="text" class="form-control" id="searchInput" value="" placeholder="countries" aria-label="Username" aria-describedby="basic-addon1" style="border-left: 0px !important;" #input>
       </div>
       <div class="dropdown">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,7 +32,7 @@
     <div class="tab-content" id="v-pills-tabContent" >
         <div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0" >
             <div  class="card" style="width: 18rem;" *ngFor="let items of data">
-                <a class="card-block stretched-link text-decoration-none" (click)="route(items)"><img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <a class="card-block stretched-link text-decoration-none" (click)="route(items)"><img src="{{items.flags.png}}" style="height: 22vh;" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
@@ -44,7 +44,7 @@
         <div class="tab-pane fade" id="v-pills-africa" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="1">
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
                 
-                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)"><img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)"><img src="{{items.flags.png}}" style="height: 22vh;"  class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
@@ -61,7 +61,7 @@
         <div class="tab-pane fade" id="v-pills-america" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="2">
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
                 <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
-                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <img src="{{items.flags.png}}" style="height: 22vh;"  class="card-img-top" alt="...">
                <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
@@ -79,7 +79,7 @@
 
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
                 <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
-                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <img src="{{items.flags.png}}" style="height: 22vh;"  class="card-img-top" alt="...">
                <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
@@ -95,7 +95,7 @@
 
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
                <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
-                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <img src="{{items.flags.png}}" style="height: 22vh;"  class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>
@@ -111,7 +111,7 @@
 
             <div class="card" style="width: 18rem;" *ngFor="let items of filtered">
                 <a  class="card-block stretched-link text-decoration-none" (click)="route(items)">
-                <img src="{{items.flags.png}}" class="card-img-top" alt="...">
+                <img src="{{items.flags.png}}" style="height: 22vh;"  class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{items.name.common}}</h5>
                   <p><b>Population:</b> {{items.population}}</p>

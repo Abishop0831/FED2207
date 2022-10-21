@@ -6,13 +6,17 @@
     padding-left: 2vw;
     padding-right: 2vw;
     gap: 5vw;
+    
 
 }
 
 .textLeft, .textRight {
 display: flex;
 flex-direction: column;
+align-items: center !important;    
+justify-content: center;
 }
+
 
 
 @media only screen and (max-width: 600px) {
@@ -21,4 +25,7 @@ flex-direction: column;
     flex-direction: column;
     overflow-x: hidden;
 }
+
+
+
   }

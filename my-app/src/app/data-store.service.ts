@@ -14,8 +14,9 @@ export class DataStoreService {
     return this.country.asObservable();
   }
 
-  //updates value and triggers subscribe
+  //updates value and triggers subscription
   public setCountry(country) {
     this.country.next(country);
+    
   }
 }

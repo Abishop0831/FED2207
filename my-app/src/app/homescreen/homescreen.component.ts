@@ -22,7 +22,25 @@ public data:Array<any> = []
 public filtered:Array<any> = []
 
 
-  @Output() newItemEvent = new EventEmitter<string>();
+  
+inputVal (random) {
+ console.log(random)
+ let val = <HTMLInputElement>document.getElementById('searchInput');
+ console.log(val?.innerHTML)
+let newVal = val?.value;
+console.log(newVal, 'this is new val')
+
+    const countryAll$ =ajax<any>(`https://restcountries.com/v3.1/name/${newVal}`).pipe(
+    map(res=> 
+      res.response.map(val=> this.data.push(val)
+    ))
+  )
+  console.log(countryAll$);
+}
+
+
+
+@Output() newItemEvent = new EventEmitter<string>();
 
   addNewItem(value: string) {
     if (this.filtered.length > 0) {
@@ -44,6 +62,8 @@ public filtered:Array<any> = []
 
 
     filter$.subscribe();
+
+  
   }
 
 
@@ -58,13 +78,16 @@ public filtered:Array<any> = []
 const countryAll$ =ajax<any>('https://restcountries.com/v3.1/all').pipe(
   map(res=>res.response.map(val=> this.data.push(val)
   
+
   ))
 )
+
+
 console.log(this.data)
 
 
 countryAll$.subscribe({
-  next: value=>console.log(value)
+
 })
 
   }

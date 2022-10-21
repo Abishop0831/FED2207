@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
-
+<button [routerLink]="['']" style="margin-left: 2vw; margin-top: 2vh; margin-bottom: 2vh;" href="#" >Go back</button>
 <section class="leftRight">
+    
 <img style="width: 500px; height:400px" src="{{Country.flags.png}}" />
 
 <section class="textLeft">
@@ -10,12 +11,21 @@
 <p><b>Region:</b>{{Country.region}}</p>
 <p><b>Sub Region:</b>{{Country.subregion}}</p>
 <p><b>Capital:</b>{{Country.capital}}</p>
+
+
 </section>
 
 <section class="textRight">
 <p><b>Top Level Domain:</b> {{Country.tld[0]}}</p>
 <p><b>Currency:</b>{{currency}}</p>
-<p><b>Languages:</b>{{Country.languages[0].name}}, {{Country.languages[1].name}}, {{Country.languages[2].name}}</p>
+<span style="display: flex; flex-direction:row">
+<b>Languages:</b><p *ngFor="let language of languages; let i = index">{{language}}, </p></span>
+<section class="borders">
+    <b>borders:</b>
+    <button *ngFor="let border of borders; let i = index" (click)="route(border)">{{border}}</button>    
+    </section>
 </section>
+
+
 
 </section>
